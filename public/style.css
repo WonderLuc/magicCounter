@@ -1,0 +1,203 @@
+
+@font-face{
+    font-family: Oleo Script;
+    src: url('../src/fonts/OleoScript-Regular.ttf');
+}
+
+@font-face{
+    font-family: Piedra;
+    src: url('../src/fonts/Piedra-Regular.ttf');
+}
+
+html{
+    background-image: url('../src/imgs/gameBackground.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100%;
+}
+
+body{
+   background: rgba(0,0,0,.5);
+   width: 100%;
+   height: 100%;
+}
+/*Header style*/
+.header{
+    position: relative;
+    width: 100%;
+    height: 70px;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: solid 1px #FFFCFC;
+    
+}
+
+header>div{
+    display: flex;
+    align-items: baseline;
+}
+
+.header__logo{
+    width:190px;
+    margin-left: 10px;
+    margin-right: 15px;
+}
+
+.header__icon{
+    width: 60px;
+}
+
+/*Battlefield style*/
+.game-field{
+    width: 100%;
+    height: 100%; 
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+    flex-wrap: wrap;
+    cursor: default;
+   
+   
+}
+
+/* Player's card styles*/
+.player-card{
+    background: url('../src/imgs/standartBackgroung.jpg');
+    width: 340px;
+    height: 489px;
+    background-size: cover;
+    margin:10px;
+    position: relative;
+}
+
+/* Avatar style*/
+.player-card__avatar{
+    width: 150px;
+    position: absolute;
+    top: 180px;
+    left: 100px;
+}
+/*life control buttons*/
+.player-card__add-button{
+    width: 0;
+	height: 0;
+	border-top: 38px solid transparent;
+	border-right: 66px solid #54F646;
+    border-bottom: 38px solid transparent;
+    position: absolute;
+    top:340px;
+    left: 35px;
+}
+.player-card__add-button:hover{
+    border-right: 66px solid #4be23d;
+}
+
+
+.player-card__add-button>p, .player-card__sub-button>p{
+    position: absolute;
+    top: -24px;
+    left: 32px;
+    font-size: 3em;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: Oleo Script;
+}
+
+.player-card__sub-button>p{
+    left: -55px;
+    top: -26px;
+}
+.player-card__sub-button{
+    width: 0;
+	height: 0;
+	border-top: 38px solid transparent;
+	border-left: 66px solid #F94040;
+    border-bottom: 38px solid transparent;
+    position: absolute;
+    top:340px;
+    left: 253px;
+}
+
+.player-card__sub-button:hover{
+    border-left: 66px solid #d83737;
+}
+
+/* Life counter's styles*/
+.player-card__life-counter{
+    position: absolute;
+    top:339px;
+    left: 125px;
+}
+
+.player-card__life-counter>p{
+    position: absolute;
+    top: 18px;
+    left: 12px;
+    font-family: Piedra;
+    font-size: 3em;
+    letter-spacing: 35px;
+}
+
+/* Nickname style*/
+.player-card__nickname{
+    width: 318px;
+    height: 39px;
+    background-color: white;
+    position: absolute;
+    top: 428px;
+    left:12px;
+}
+
+.player-card__nickname>p{
+    font-size: 2em;
+    text-align: center;
+    font-family: Oleo Script;
+}
+
+/* Add new player menu*/
+.new-player-menu{
+    position: absolute;
+    top:50%;
+    margin: auto;
+    z-index:50;
+    background-color: rgba(0,0,0,.8);
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 50px;
+    border: 20px solid rgba(255, 255, 0, .8);
+    border-image: repeating-linear-gradient( -45deg, black, black 10px, rgba(255, 255, 0, .8) 11px, rgba(255, 255, 0, .8) 21px) 25;
+    color: White;
+    display: none;
+    transform: translate(0, -50%);
+
+}
+.new-player-menu label, button{
+    margin: 5px;
+}
+
+#name{
+    padding: 5px;
+    border: none;
+    margin-left: 5px;
+}
+
+.add-player-button{
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    border: none;
+    padding: 10px;
+    background-color: rgb(238, 194, 50);
+    font-weight: bold;
+    z-index: 997;
+}
+
+/* style for dead player */
+.dead .player-card__life-counter,
+.dead .player-card__add-button,
+.dead .player-card__sub-button{
+    display: none;
+}
+
